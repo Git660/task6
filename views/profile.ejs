@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs %>
+<div class="container">
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="image">
+  <input type="submit">
+</form>
+
+</div>
+    <div class="container">
+      <div class="card" style="width: 18rem;">
+        <img src="../images/uploads/<%= user.profilepic%> " c%lass="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%=user.username%>Kii profile</h5>
+          <p class="card-text"><%=user.email%>ka email   </p><br>
+          <p class="card-text"><%=user.username%>ka mobile no <%=user.number%></p>
+  
+          <a href="/like/<%=user._id%>" class="btn btn-primary">likedby <%= user.like.length %></a>
+          <a href="/logout">logout</a>
+        </div>
+      </div>
+
+    </div>
+    <% include ./partials/footer.ejs %>
